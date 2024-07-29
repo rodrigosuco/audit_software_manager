@@ -1,0 +1,37 @@
+<%= form_with(model: proposal) do |form| %>
+  <% if proposal.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(proposal.errors.count, "error") %> prohibited this proposal from being saved:</h2>
+
+      <ul>
+        <% proposal.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :audit_standard, style: "display: block" %>
+    <%= form.text_field :audit_standard %>
+  </div>
+
+  <div>
+    <%= form.label :accreditation, style: "display: block" %>
+    <%= form.text_field :accreditation %>
+  </div>
+
+  <div>
+    <%= form.label :company, style: "display: block" %>
+    <%= form.text_field :company %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

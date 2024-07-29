@@ -1,0 +1,62 @@
+<%= form_with(model: cost) do |form| %>
+  <% if cost.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(cost.errors.count, "error") %> prohibited this cost from being saved:</h2>
+
+      <ul>
+        <% cost.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :audit_local, style: "display: block" %>
+    <%= form.text_field :audit_local %>
+  </div>
+
+  <div>
+    <%= form.label :audit_stage, style: "display: block" %>
+    <%= form.text_field :audit_stage %>
+  </div>
+
+  <div>
+    <%= form.label :audit_year, style: "display: block" %>
+    <%= form.number_field :audit_year %>
+  </div>
+
+  <div>
+    <%= form.label :man_days, style: "display: block" %>
+    <%= form.text_field :man_days %>
+  </div>
+
+  <div>
+    <%= form.label :md_cost, style: "display: block" %>
+    <%= form.text_field :md_cost %>
+  </div>
+
+  <div>
+    <%= form.label :fee, style: "display: block" %>
+    <%= form.text_field :fee %>
+  </div>
+
+  <div>
+    <%= form.label :travel_expenses, style: "display: block" %>
+    <%= form.text_field :travel_expenses %>
+  </div>
+
+  <div>
+    <%= form.label :total_cost, style: "display: block" %>
+    <%= form.text_field :total_cost %>
+  </div>
+
+  <div>
+    <%= form.label :proposal, style: "display: block" %>
+    <%= form.text_field :proposal %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

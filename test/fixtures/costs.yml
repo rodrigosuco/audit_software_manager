@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  audit_local: MyString
+  audit_stage: MyString
+  audit_year: 1
+  man_days: 9.99
+  md_cost: 9.99
+  fee: 9.99
+  travel_expenses: 9.99
+  total_cost: 9.99
+  proposal: 
+
+two:
+  audit_local: MyString
+  audit_stage: MyString
+  audit_year: 1
+  man_days: 9.99
+  md_cost: 9.99
+  fee: 9.99
+  travel_expenses: 9.99
+  total_cost: 9.99
+  proposal: 
