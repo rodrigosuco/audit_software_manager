@@ -11,4 +11,5 @@
   <% end %>
 </div>
 
-<%= link_to "New proposal", new_proposal_path %>
+<%= link_to "New proposal", companies_path, class: 'btn btn-primary',
+    data: {turbo_method: :get, turbo_confirm: "Select a company to create a proposal." } %>

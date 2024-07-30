@@ -4,5 +4,9 @@ class Proposal
   field :title, type: String
   field :audit_standard, type: String
   field :accreditation, type: String
-  field :company, type: Reference
+  field :status, type: String
+
+  belongs_to :company
+
+  has_many :costs
 end

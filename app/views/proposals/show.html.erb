@@ -3,6 +3,7 @@
 <%= render @proposal %>
 
 <div>
+  <%= link_to "Add costs", new_cost_path(proposal_id: @proposal.id), class: 'btn btn-primary' %>
   <%= link_to "Edit this proposal", edit_proposal_path(@proposal) %> |
   <%= link_to "Back to proposals", proposals_path %>
 

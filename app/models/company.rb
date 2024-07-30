@@ -9,4 +9,6 @@ class Company
   field :contact_person, type: String
   field :email, type: String
   field :telephone, type: String
+
+  has_many :proposals
 end

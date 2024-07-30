@@ -13,6 +13,7 @@ class ProposalsController < ApplicationController
   # GET /proposals/new
   def new
     @proposal = Proposal.new
+    @proposal.company = params[:company_id]
   end
 
   # GET /proposals/1/edit
@@ -67,4 +68,5 @@ class ProposalsController < ApplicationController
     def proposal_params
       params.require(:proposal).permit(:title, :audit_standard, :accreditation, :company)
     end
+
 end

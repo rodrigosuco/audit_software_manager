@@ -13,6 +13,7 @@ class CostsController < ApplicationController
   # GET /costs/new
   def new
     @cost = Cost.new
+    @cost.proposal = params[:proposal_id]
   end
 
   # GET /costs/1/edit

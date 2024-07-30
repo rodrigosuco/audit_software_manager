@@ -12,6 +12,12 @@
   <% end %>
 
   <div>
+    <%= form.label :company, style: "display: block" %>
+    <%= form.text_field :company_id, value: (Company.where(id: @proposal.company_id)&.name), readonly: true %>
+    <%= form.hidden_field :company, value: (@proposal.company_id) %>
+  </div>  
+  
+  <div>
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
@@ -24,11 +30,6 @@
   <div>
     <%= form.label :accreditation, style: "display: block" %>
     <%= form.text_field :accreditation %>
-  </div>
-
-  <div>
-    <%= form.label :company, style: "display: block" %>
-    <%= form.text_field :company %>
   </div>
 
   <div>

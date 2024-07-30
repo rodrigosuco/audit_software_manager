@@ -12,6 +12,12 @@
   <% end %>
 
   <div>
+    <%= form.label :proposal, style: "display: block" %>
+    <%= form.text_field :proposal, readonly: true, value: ((@cost.proposal)&.title || 'No proposal selected') %>
+    <%= form.hidden_field :proposal, value: @cost.proposal.id %>
+  </div>  
+
+  <div>
     <%= form.label :audit_local, style: "display: block" %>
     <%= form.text_field :audit_local %>
   </div>
@@ -28,32 +34,27 @@
 
   <div>
     <%= form.label :man_days, style: "display: block" %>
-    <%= form.text_field :man_days %>
+    <%= form.number_field :man_days, :step => "0.01" %>
   </div>
 
   <div>
     <%= form.label :md_cost, style: "display: block" %>
-    <%= form.text_field :md_cost %>
+    <%= form.number_field :md_cost, :step => "0.01" %>
   </div>
 
   <div>
     <%= form.label :fee, style: "display: block" %>
-    <%= form.text_field :fee %>
+    <%= form.number_field :fee, :step => "0.01" %>
   </div>
 
   <div>
     <%= form.label :travel_expenses, style: "display: block" %>
-    <%= form.text_field :travel_expenses %>
+    <%= form.number_field :travel_expenses, :step => "0.01" %>
   </div>
 
   <div>
     <%= form.label :total_cost, style: "display: block" %>
-    <%= form.text_field :total_cost %>
-  </div>
-
-  <div>
-    <%= form.label :proposal, style: "display: block" %>
-    <%= form.text_field :proposal %>
+    <%= form.text_field :total_cost, readonly: true, value: @cost.total_cost %>
   </div>
 
   <div>
