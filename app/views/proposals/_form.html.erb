@@ -13,7 +13,7 @@
 
   <div>
     <%= form.label :company, style: "display: block" %>
-    <%= form.text_field :company_id, value: (Company.where(id: @proposal.company_id)&.name), readonly: true %>
+    <%= form.text_field :company, value: @proposal.company.name, readonly: true %>
     <%= form.hidden_field :company, value: (@proposal.company_id) %>
   </div>  
   

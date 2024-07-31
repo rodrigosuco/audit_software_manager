@@ -1,8 +1,10 @@
+<%= render "nav" %>
 <p style="color: green"><%= notice %></p>
-
-<h1>Proposals</h1>
-
-<div id="proposals">
+<%= link_to "New proposal", companies_path, class: 'btn btn-primary',
+data: {turbo_method: :get, turbo_confirm: "Select a company to create a proposal." },
+style:"margin-left: 10px;" %>
+<hr>
+<div id="proposals" style="padding-left: 10px;">
   <% @proposals.each do |proposal| %>
     <%= render proposal %>
     <p>
@@ -10,6 +12,3 @@
     </p>
   <% end %>
 </div>
-
-<%= link_to "New proposal", companies_path, class: 'btn btn-primary',
-    data: {turbo_method: :get, turbo_confirm: "Select a company to create a proposal." } %>

@@ -8,6 +8,7 @@ class ProposalsController < ApplicationController
 
   # GET /proposals/1 or /proposals/1.json
   def show
+    @costs = Cost.where(proposal_id: @proposal.id)
   end
 
   # GET /proposals/new

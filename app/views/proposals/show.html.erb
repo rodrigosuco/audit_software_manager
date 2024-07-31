@@ -1,11 +1,31 @@
+<%= render "nav" %>
+<div style="padding-top: 10px; padding-left:10px">
+  <%= link_to "Add costs", new_cost_path(proposal_id: @proposal.id), class: 'btn btn-success' %> |
+  <%= link_to "Edit this proposal", edit_proposal_path(@proposal), class: 'btn btn-primary' %> |
+  <%= link_to "Back to proposals", proposals_path, class: 'btn btn-primary' %> |
+  
+  <%= button_to "Destroy this proposal", @proposal, method: :delete, class: 'btn btn-danger',
+  data: {turbo_method: :get, turbo_confirm: "Are you sure? Confirm deletion?" },
+  style: 'margin-top: 10px'  %>
+  <hr>
+</div>
+
 <p style="color: green"><%= notice %></p>
 
 <%= render @proposal %>
 
-<div>
-  <%= link_to "Add costs", new_cost_path(proposal_id: @proposal.id), class: 'btn btn-primary' %>
-  <%= link_to "Edit this proposal", edit_proposal_path(@proposal) %> |
-  <%= link_to "Back to proposals", proposals_path %>
-
-  <%= button_to "Destroy this proposal", @proposal, method: :delete %>
+<div id="costs" style="padding-left: 10px;">
+  <hr>
+  <% cost_number = 0 %>
+  <% @costs.each do |cost| %>
+    <% cost_number += 1 %>
+    <%= "Cost #{cost_number}"%>
+    <%= render cost %>
+    <p>
+      <%= link_to "Show this cost", cost, class: 'btn btn-primary' %>
+    </p>
+    <hr>
+  <% end %>
 </div>
+
+

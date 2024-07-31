@@ -1,47 +1,65 @@
-<div id="<%= dom_id cost %>">
-  <p>
-    <strong>Audit local:</strong>
-    <%= cost.audit_local %>
-  </p>
+<style>
+  table {
+    width: 40%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
 
-  <p>
-    <strong>Audit stage:</strong>
-    <%= cost.audit_stage %>
-  </p>
+  th, td {
+    border: 1px solid #444444;
+    text-align: left;
+    padding: 8px;
+    color: #f0f0f0;
+  }
 
-  <p>
-    <strong>Audit year:</strong>
-    <%= cost.audit_year %>
-  </p>
+  th {
+    background-color: #333333;
+  }
 
-  <p>
-    <strong>Man days:</strong>
-    <%= cost.man_days %>
-  </p>
+  tr:nth-child(even) {
+    background-color: #222222;
+  }
 
-  <p>
-    <strong>Md cost:</strong>
-    <%= cost.md_cost %>
-  </p>
+  tr:nth-child(odd) {
+    background-color: #1a1a1a;
+  }
 
-  <p>
-    <strong>Fee:</strong>
-    <%= cost.fee %>
-  </p>
+  tr:hover {
+    background-color: #555555;
+  }
+</style>
 
-  <p>
-    <strong>Travel expenses:</strong>
-    <%= cost.travel_expenses %>
-  </p>
-
-  <p>
-    <strong>Total cost:</strong>
-    <%= cost.total_cost %>
-  </p>
-
-  <p>
-    <strong>Proposal:</strong>
-    <%= cost.proposal.title %>
-  </p>
-
-</div>
+<table id="<%= dom_id cost %>">
+  <tr>
+    <th>Audit local</th>
+    <td><%= cost.audit_local %></td>
+  </tr>
+  <tr>
+    <th>Audit stage</th>
+    <td><%= cost.audit_stage %></td>
+  </tr>
+  <tr>
+    <th>Audit year</th>
+    <td><%= cost.audit_year %></td>
+  </tr>
+  <tr>
+    <th>Man days</th>
+    <td><%= cost.man_days %></td>
+  </tr>
+  <tr>
+    <th>Md cost</th>
+    <td><%= cost.md_cost %></td>
+  </tr>
+  <tr>
+    <th>Fee</th>
+    <td><%= cost.fee %></td>
+  </tr>
+  <tr>
+    <th>Travel expenses</th>
+    <td><%= cost.travel_expenses %></td>
+  </tr>
+  <tr>
+    <th>Total cost</th>
+    <td><%= cost.total_cost %></td>
+  </tr>
+</table>
