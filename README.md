@@ -11,9 +11,9 @@ run `bundle install` inside project folder
 
 * Database creation
 make sure MONGODB is istalled and run:
-for MAC OS:
+* for MAC OS:
   `brew services start mongodb-community`
-for Linux: 
+* for Linux: 
   `sudo systemctl start mongod`
 
 * Running the application
